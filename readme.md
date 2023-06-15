@@ -1,5 +1,17 @@
 # Go Distributed Task Scheduler
 
+```mermaid
+graph LR
+    A[cli-user-interface] -->|1. Define Tasks| B[Task Definition Service]
+    B -->|2. Store Task Definitions| D[Database Service]
+    A -->|3. View Schedule| E[Task Scheduler Service]
+    E -->|4. Retrieve Task Definitions| D
+    E -->|5. Schedule Tasks| F[Task Execution Service]
+    F -->|6. Execute Tasks| G[Docker Swarm]
+    F -->|7. Report Results| D
+    A -->|8. View Results| D
+```
+
 ## Overview
 This project involves the creation of a distributed task scheduler using 
 - Go
@@ -24,7 +36,7 @@ This service, built with Go and Docker Swarm, will run on each node in the Docke
 
 This PostgreSQL service will store task definitions, the schedule for each task, and the result of each task execution. The Task Definition Service, Task Scheduler Service, and Task Execution Service will all communicate with the Database Service to store and retrieve this information.
 
-### User Interface
+### CLI User Interface
 This command-line interface, built with Go and gorpc, will allow users to define tasks, view the schedule, and view the results of task executions. It will communicate with the other services using gorpc.
 
 ### Steps
