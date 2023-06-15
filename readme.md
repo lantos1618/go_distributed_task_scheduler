@@ -18,7 +18,7 @@ graph LR
 git clone https://github.com/lantos1618/go_distributed_task_scheduler
 
 # build the project
-docker-compose up
+docker-compose up --build
 ```
 
 
