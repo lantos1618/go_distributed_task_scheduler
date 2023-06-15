@@ -12,6 +12,16 @@ graph LR
     A -->|8. View Results| D
 ```
 
+## Quick Start
+```bash
+# get the project
+git clone https://github.com/lantos1618/go_distributed_task_scheduler
+
+# build the project
+docker-compose up
+```
+
+
 ## Overview
 This project involves the creation of a distributed task scheduler using 
 - Go
