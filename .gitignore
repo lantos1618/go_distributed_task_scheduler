@@ -1,0 +1,43 @@
+# Binaries, plugins, libs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Log files
+*.log
+
+# Dependency directories
+vendor/
+
+# IDE/Editor folders
+.idea/
+.vscode/
+
+# Go specific
+*.o
+*.a
+*.c
+*.h
+*.s
+
+# Output of the go coverage tool
+*.cover
+
+# Dependency files
+go.sum
+go.mod
+
+# Build artifacts
+dist/
+
+# Docker Compose override files
+docker-compose.override.yml
+
+# environment variables
+.env
+.env.local
+
