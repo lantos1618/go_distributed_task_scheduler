@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  cli-user-interface:
+    build: ./cli-user-interface
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database-service
+      - task-definition-service
+      - task-execution-service
+      - task-scheduler-service
+  database-service:
+    build: ./database-service
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: distributed-task-scheduler
+    ports:
+      - "5432:5432"
+  task-definition-service:
+    build: ./task-definition-service
+    ports:
+      - "50051:50051"
+  task-execution-service:
+    build: ./task-execution-service
+    ports:
+      - "50052:50052"
+  task-scheduler-service:
+    build: ./task-scheduler-service
+    ports:
+      - "50053:50053"
