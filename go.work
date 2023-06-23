@@ -1,9 +1,0 @@
-go 1.20
-
-use (
-    ./distributed-task-scheduler/cli-user-interface
-    ./distributed-task-scheduler/database-service
-    ./distributed-task-scheduler/task-definition-service
-    ./distributed-task-scheduler/task-execution-service
-    ./distributed-task-scheduler/task-scheduler-service
-)
